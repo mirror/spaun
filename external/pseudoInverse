@@ -1,0 +1,37 @@
+#!/usr/bin/python
+import sys
+import scipy
+import scipy.linalg
+import numpy
+
+
+
+dtype=scipy.dtype('float32').newbyteorder('B')
+
+m=scipy.fromfile(sys.argv[1],dtype=dtype)
+m.shape=scipy.sqrt(m.shape),scipy.sqrt(m.shape)
+
+minSV=float(sys.argv[3])
+nSV=int(sys.argv[4])
+
+#TODO: change this so it doesn't calculate the full SVD and then throw away most of it
+
+
+w,v=scipy.linalg.eigh(m)
+wInv=1.0/w
+
+count=0
+for j in range(len(w)):
+    if w[j]<minSV: wInv[j]=0
+    else: count+=1
+
+print 'using',count,'eigenvalues for pseudo-inverse'
+    
+pinv=numpy.dot(v,numpy.multiply(wInv[:,numpy.core.newaxis],v.T))
+
+#pinv=scipy.linalg.pinv2(m)
+
+output=scipy.memmap(sys.argv[2],dtype=dtype,mode='w+',shape=pinv.shape)
+output[:]=pinv[:]
+
+

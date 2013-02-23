@@ -1,0 +1,18 @@
+# OS: WIN, multi_thread: 0, rand_seed_base: 120517152046
+# test_type: [0, 0, 0], test_option: [(4, 0), (4, 0), (4, 0)], num_test_run: 1, num_subjects: 1
+# present_interval: 0.15000, motor_init: 0.15000
+# CUthreshold: 0.45000, CUNumsThreshold: 0.25000, CUinScale: 1.00000
+# learn_alpha: 0.75000, learn_actions: 2
+# tranf_scale: 0.20000, add_scale: 1.15000
+# fdbk_val: 1.30000, decay_val: 0.97500, en_reh: 1, en_buf: 1
+
+# ---------------------------- SUBJECT 1 ---------------------------- |1
+# ['FOR', 'SIX', 'TWO', 'ONE', 'SEV', 'THR', 'ZER', 'NIN', 'FIV', 'EIG']
+# ['FOR', 'ONE', 'TWO', 'THR', 'NIN', 'EIG', 'ZER', 'SIX', 'FIV', 'SEV']
+# ['THR', 'FIV', 'SIX', 'ZER', 'EIG', 'NIN', 'TWO', 'FOR', 'SEV', 'ONE']
+# randseed:120517152046
+# Neuron Count: 141602
+# Est Run Time: 8
+#
+
+# END [17/05/12 - 15:24:43]
